@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire OTIF AFRICA SPACE</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            otifRed: '#9A1310',
+            otifBlue: '#0099CA',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Styles personnalisés */
+    .checkbox-otif:checked {
+      background-color: #9A1310;
+      border-color: #0099CA;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="container max-w-md mx-auto px-4 py-6">
+    <div class="bg-white rounded-lg shadow-lg border-t-8 border-t-otifRed">
+      <!-- En-tête et logo -->
+      <div class="flex flex-col items-center space-y-2 p-4 pb-2">
+        <div class="w-full max-w-[200px] h-auto">
+          <img 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/OTIF_logo.jpg-Qflz7Jji3n8GrkGnbi2DE9GfghGaCk.jpeg" 
+            alt="OTIF AFRICA SPACE Logo" 
+            class="w-full h-auto"
+          >
+        </div>
+        <h2 class="text-xl font-bold text-center text-otifRed">OTIF AFRICA SPACE</h2>
+      </div>
+      
+      <!-- Contenu du formulaire -->
+      <div class="p-6">
+        <form id="otifForm" class="space-y-6">
+          <div class="space-y-1">
+            <p class="text-sm text-center mb-4 text-gray-700">
+              Merci de remplir ce court formulaire pour rester connecté.e à l'univers spatial africain.
+              <br>
+              <span class="italic">
+                Please fill out this short form to stay connected to the African space ecosystem.
+              </span>
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <div>
+              <label for="name" class="block text-otifRed font-medium">
+                Nom et prénom / <span class="italic">Name and Surname</span>:
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full mt-1 px-3 py-2 border border-otifBlue rounded-md focus:outline-none focus:ring-2 focus:ring-otifBlue"
+                required
+              >
+            </div>
+
+            <div>
+              <label for="contact" class="block text-otifRed font-medium">
+                Adresse e-mail ou numéro WhatsApp / <span class="italic">Email address or WhatsApp number</span>:
+              </label>
+              <input
+                type="text"
+                id="contact"
+                name="contact"
+                class="w-full mt-1 px-3 py-2 border border-otifBlue rounded-md focus:outline-none focus:ring-2 focus:ring-otifBlue"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <label class="block text-otifRed font-medium">
+              Dans quel domaine travaillez-vous actuellement ? /
+              <span class="italic">What is your current field of work?</span>
+            </label>
+            <div class="grid grid-cols-1 gap-2">
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="research"
+                  name="field"
+                  value="research"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="research" class="text-sm">
+                  Recherche / Université / <span class="italic">Research / University</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="publicAdmin"
+                  name="field"
+                  value="publicAdmin"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="publicAdmin" class="text-sm">
+                  Administration publique / <span class="italic">Public Administration</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="privateCompany"
+                  name="field"
+                  value="privateCompany"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="privateCompany" class="text-sm">
+                  Entreprise privée / <span class="italic">Private Company</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="education"
+                  name="field"
+                  value="education"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="education" class="text-sm">
+                  Éducation / Formation / <span class="italic">Education / Training</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="student"
+                  name="field"
+                  value="student"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="student" class="text-sm">
+                  Étudiant(e) / <span class="italic">Student</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="otherField"
+                  name="field"
+                  value="other"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="otherField" class="text-sm">
+                  Autre / <span class="italic">Other</span>
+                </label>
+              </div>
+              <div id="otherFieldContainer" class="hidden">
+                <input
+                  type="text"
+                  id="otherFieldText"
+                  name="otherFieldText"
+                  class="w-full mt-1 px-3 py-2 border border-otifBlue rounded-md focus:outline-none focus:ring-2 focus:ring-otifBlue"
+                  placeholder="Précisez / Specify"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <label class="block text-otifRed font-medium">
+              Qu'est-ce qui vous intéresse chez OTIF AFRICA SPACE ? /
+              <span class="italic">What interests you about OTIF AFRICA SPACE?</span>
+            </label>
+            <div class="grid grid-cols-1 gap-2">
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="projects"
+                  name="interests"
+                  value="projects"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="projects" class="text-sm">
+                  Projets collaboratifs spatiaux / <span class="italic">Collaborative space projects</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="innovation"
+                  name="interests"
+                  value="innovation"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="innovation" class="text-sm">
+                  Innovation et technologie / <span class="italic">Innovation and technology</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="funding"
+                  name="interests"
+                  value="funding"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="funding" class="text-sm">
+                  Opportunités de financement / <span class="italic">Funding opportunities</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="training"
+                  name="interests"
+                  value="training"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="training" class="text-sm">
+                  Formation / renforcement de capacités / <span class="italic">Training / capacity building</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="networking"
+                  name="interests"
+                  value="networking"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="networking" class="text-sm">
+                  Réseautage africain et international /
+                  <span class="italic">African and international networking</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="otherInterest"
+                  name="interests"
+                  value="other"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="otherInterest" class="text-sm">
+                  Autres / <span class="italic">Other</span>
+                </label>
+              </div>
+              <div id="otherInterestContainer" class="hidden">
+                <input
+                  type="text"
+                  id="otherInterestText"
+                  name="otherInterestText"
+                  class="w-full mt-1 px-3 py-2 border border-otifBlue rounded-md focus:outline-none focus:ring-2 focus:ring-otifBlue"
+                  placeholder="Précisez / Specify"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <label class="block text-otifRed font-medium">
+              Souhaitez-vous recevoir nos actualités et invitations aux événements ? /
+              <span class="italic">Would you like to receive our news and event invitations?</span>
+            </label>
+            <div class="grid grid-cols-1 gap-2">
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="email"
+                  name="notifications"
+                  value="email"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="email" class="text-sm">
+                  Oui, par e-mail / <span class="italic">Yes, by email</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="whatsapp"
+                  name="notifications"
+                  value="whatsapp"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="whatsapp" class="text-sm">
+                  Oui, par WhatsApp / <span class="italic">Yes, via WhatsApp</span>
+                </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="none"
+                  name="notifications"
+                  value="none"
+                  class="checkbox-otif w-4 h-4 border-otifBlue rounded focus:ring-otifBlue"
+                >
+                <label for="none" class="text-sm">
+                  Non merci / <span class="italic">No, thank you</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-2 px-4 bg-otifRed hover:bg-[#7a0f0d] text-white font-medium rounded-md transition-colors"
+          >
+            Soumettre / <span class="italic">Submit</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Afficher/masquer
+    document.getElementById('otherField').addEventListener('change', function() {
+      document.getElementById('otherFieldContainer').style.display = this.checked ? 'block' : 'none';
+    });
+
+    document.getElementById('otherInterest').addEventListener('change', function() {
+      document.getElementById('otherInterestContainer').style.display = this.checked ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>
