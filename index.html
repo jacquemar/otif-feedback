@@ -71,12 +71,24 @@
 
             <div>
               <label for="contact" class="block text-otifRed font-medium">
-                Adresse e-mail ou numéro WhatsApp / <span class="italic">Email address or WhatsApp number</span>:
+                Adresse e-mail / <span class="italic">Email address</span>:
               </label>
               <input
                 type="text"
-                id="contact"
-                name="contact"
+                id="email"
+                name="email"
+                class="w-full mt-1 px-3 py-2 border border-otifBlue rounded-md focus:outline-none focus:ring-2 focus:ring-otifBlue"
+                required
+              >
+            </div>
+            <div>
+              <label for="contact" class="block text-otifRed font-medium">
+                numéro WhatsApp / <span class="italic">WhatsApp number</span>:
+              </label>
+              <input
+                type="text"
+                id="whatsapp"
+                name="whatsapp"
                 class="w-full mt-1 px-3 py-2 border border-otifBlue rounded-md focus:outline-none focus:ring-2 focus:ring-otifBlue"
                 required
               >

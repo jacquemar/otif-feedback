@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Récupérer les valeurs du formulaire
         const nomPrenom = document.getElementById('name').value;
-        const contact = document.getElementById('contact').value;
+        const email = document.getElementById('email').value;
+        const whatsapp = document.getElementById('whatsapp').value;
         
         // Récupérer les domaines d'activité sélectionnés
         const domaines = [];
@@ -46,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Créer l'objet de données
         const donnees = {
             nomPrenom,
-            contact,
+            email,
+            whatsapp,
             domaines,
             interets,
             notifications
